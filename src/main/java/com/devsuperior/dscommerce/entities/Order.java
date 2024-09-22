@@ -3,6 +3,9 @@ package com.devsuperior.dscommerce.entities;
 import jakarta.persistence.*;
 
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_order")
@@ -15,13 +18,21 @@ public class Order {
     private Instant moment;
     private OrderStatus status;
 
+    //Vai adicionar o campo client_id na tabela tb_order que é chave estrangeira
+    //Muitos pedidos para um usuario
     @ManyToOne
+    //Definindo a classe estrangeira da tabela TB_USER da classer User
     @JoinColumn(name = "client_id")
     private User client;
 
+    //nome do atributo que está no payment e cascadeType.ALL para funcionar corretamente OneToOne
     @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
     private Payment payment;
 
+    //Quando não tem repetição, usar Set e não list
+    //Id da classe OrderItem e order da classe OrderItemPK
+    @OneToMany(mappedBy = "id.order")
+    private Set<OrderItem> items = new HashSet<>();
 
 
 
@@ -76,4 +87,14 @@ public class Order {
     public void setPayment(Payment payment) {
         this.payment = payment;
     }
+
+    public Set<OrderItem> getItems() {
+        return items;
+    }
+
+    public List<Product> getProducts() {
+        // x é do OrdemItem, pega o Product e coloca em uma lista
+        return items.stream().map(x -> x.getProduct()).toList();
+    }
+
 }
