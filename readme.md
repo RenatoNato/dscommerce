@@ -5,3 +5,5 @@
 
 </br>
 
+<h4>Acesso ao diagrama de classe UML:</h4></br>
+<img src="https://github.com/RenatoNato/dscommerce/blob/main/DSCommerce.png">
