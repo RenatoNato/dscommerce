@@ -10,5 +10,5 @@
 <h4>UML Completo:</h4></br>
 <img src="https://github.com/RenatoNato/dscommerce/blob/main/DSCommerce.png">
 
-<h4>UML Simplificado:</h4></br>
+<h4>UML Simplificado (ORM):</h4></br>
 <img src="https://github.com/RenatoNato/dscommerce/blob/main/uml-simplificado.png">
