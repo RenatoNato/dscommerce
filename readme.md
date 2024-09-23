@@ -5,7 +5,7 @@
 
 </br>
 
-<h4>Acesso ao diagrama de classe UML completo e simplificado.</h4></br>
+<h4>Acesso ao diagrama de classe UML completo e simplificado(Apenas classes de entidades de ORM).</h4></br>
 
 <h4>UML Completo:</h4></br>
 <img src="https://github.com/RenatoNato/dscommerce/blob/main/DSCommerce.png">
